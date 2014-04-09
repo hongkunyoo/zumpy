@@ -53,14 +53,12 @@ manager 폴더
  * itemManager : item들을 예쁘고 알맞게 뿌려주는 놈
  * touchManager : 사용자 입력을 처리하는 놈
 
-보시면 대부분의 Manager Class 들은 다음과 같은 함수가 있는 것을 볼 수 있을 것입니다.
+밑에 코드를 보시면 대부분의 Manager Class 들은 다음과 같은 함수가 있는 것을 볼 수 있을 것입니다.
 이거는 ImpactJS에서 자체적으로 만든 Singleton 객체 생성 방법입니다.
 그냥 이렇게 코딩하면 var myManager = new MyManager(); 를 하여도 단 하나의 객체만을 사용한다고 생각하시면 됩니다.
 혹시 Singleton이 뭔지 모르시는 분은,
-### See also
-
-  * [Singleton](http://itdp1024.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4-Singleton-Pattern)
-  여기나 인터넷에서 '싱글톤'이라고 치면 많이 나옴. 이번 기회에 한번 알아보셈.
+ * [Singleton](http://itdp1024.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4-Singleton-Pattern)
+ 여기나 인터넷에서 '싱글톤'이라고 치면 많이 나옴. 이번 기회에 한번 알아보셈.
 
 ```javascript
 staticInstantiate: function () {
@@ -80,6 +78,35 @@ init: function () {
 ```
 
 
+### touchManager
+
+여기 touchManager에 보시면 update 단에서 이중 점프를 하는 코드가 있습니다.
+zumpy 같은 경우 아이템을 먹으면 이중 점프 뿐만 아니라 더 할수 있습니다.
+그래서 보시면 GM.JUMP > 0 의 변수가 0보다 크면은 계속해서 공중 점프를 할 수 있게 했습니다.
+그리고 점프를 해주는 코드는 정말 간단합니다.
+`this.player.vel.y = -700;` 요렇게만 해주면 끝~!
+근데 보면 this.player 라고 되어 있는데 처음에 게임을 시작할 때 touchManager에 누군가가 player를 대입해줘야 합니다.
+아니면 this.player에 null이 들어가서 에러가 나겠지요.
+
+```javascript
+update: function () {
+
+    if (this.player.vel.y != 0) this.player.vel.x = 42;
+
+    if (ig.input.pressed("touch")) {
+	if (!GM.SUPER_JUMPY && this.player.jump) {
+	    if (GM.JUMP > 0) {
+		this.player.vel.y = -700;
+		//UM.decreaseJump();
+	    }
+	}
+	else
+	    this.player.vel.y = -700;
+    }
+}
+```
+
+
 main.js
 --------------------
 
@@ -94,3 +121,4 @@ BM = new BlockManager();
 
 이렇게 하면 Impact 어느 곳에서든지 GM.gameStart(); 이렇게 아무대나에서 호출할수 있습니다.
 (Global하게 사용하게 위함)
+
