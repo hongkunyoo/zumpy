@@ -1,4 +1,4 @@
-﻿<!--
+
 <!DOCTYPE html>
 
 <html>
@@ -8,48 +8,11 @@
     <title>Zumpy</title>
 
     
-    <!-- Zumpy 참조 
-    <!--<script type="text/javascript" src="lib/impact/impact.js"></script>
+     
+    <script type="text/javascript" src="lib/impact/impact.js"></script>
 	<script type="text/javascript" src="lib/game/main.js"></script>
 
-	<script src="//connect.facebook.net/en_US/all.js"></script>
-	<script>
 
-		function login(callback) {
-		  FB.login(callback);
-		}
-		function loginCallback(response) {
-		  console.log('loginCallback',response);
-		  if(response.status != 'connected') {
-		    top.location.href = 'https://www.facebook.com/appcenter/YOUR_APP_NAMESPACE';
-		  }
-		}
-		function onStatusChange(response) {
-		  if( response.status != 'connected' ) {
-		    login(loginCallback);
-		  } else {
-		    //showHome();
-		    console.log('onStatusChange NOT connected');
-		  }
-		}
-		function onAuthResponseChange(response) {
-		  console.log('onAuthResponseChange', response);
-		}
-
-
-
-
-
-		FB.init({
-		  appId: "676498889053358",
-		  frictionlessRequests: true,
-		  status: true,
-		  version: 'v2.0'
-		});
-
-		FB.Event.subscribe('auth.authResponseChange', onAuthResponseChange);
-		FB.Event.subscribe('auth.statusChange', onStatusChange);
-	</script>
 
 	<style>
 		.myclass {
@@ -59,18 +22,18 @@
 
 </head>
 <body>
-	<!--
+	
 	<div>
 		<canvas id="canvas"></canvas>
     </div>
-	--
-    <div class="myclass" id="fb-root"></div>
+
+    
     
 </body>
 </html>
--->
 
 
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -159,11 +122,11 @@
   }
 </script>
 
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
+
+  //Below we include the Login Button social plugin. This button uses
+  //the JavaScript SDK to present a graphical Login button that triggers
+  //the FB.login() function when clicked.
+
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
@@ -173,3 +136,4 @@
 
 </body>
 </html>
+-->
