@@ -1,25 +1,26 @@
 Zumpy Web Version
 ==============
 
-ÀÌ ÇÁ·ÎÁ§Æ®¸¦ º¸°í ÀüÃ¼ÀûÀÎ ±¸Á¶¸¦ ÆÄ¾ÇÇÏ¼¼¿ä.
-Å©°Ô lib Æú´õ ¾È¿¡ entities, managers, levels Æú´õ°¡ ÀÖ½À´Ï´Ù.
+ì´ í”„ë¡œì íŠ¸ëŠ” 2012 Windows 8 App Star ê²Œìž„ ë¶€ë¬¸ ë™ìƒì„ ìˆ˜ìƒí•œ Zumpyë¥¼ ì›¹ì— ì˜¬ë¦° ê²ƒìž…ë‹ˆë‹¤.
+
+í¬ê²Œ lib í´ë” ì•ˆì— entities, managers, levels í´ë”ê°€ ìžˆìŠµë‹ˆë‹¤.
 
  * entities
  * managers
  * levels
  
 
-entities Æú´õ
+entities í´ë”
 --------------------
 
-entities ¾È¿¡´Â ¸»±×´ë·Î °ÔÀÓ ¾È¿¡ µé¾î°¥ °¢ °´Ã¼µéÀ» ´ã´çÇÏ´Â ³ðµéÀ» ¸ð¾ÆµÐ °÷ÀÔ´Ï´Ù.
-ÁøÇüÀÌ°¡ ÁýÁßÇØ¼­ ºÁ¾ßÇÒ µí ÇÕ´Ï´Ù.
+entities ì•ˆì—ëŠ” ë§ê·¸ëŒ€ë¡œ ê²Œìž„ ì•ˆì— ë“¤ì–´ê°ˆ ê° ê°ì²´ë“¤ì„ ë‹´ë‹¹í•˜ëŠ” ë†ˆë“¤ì„ ëª¨ì•„ë‘” ê³³ìž…ë‹ˆë‹¤.
+ì§„í˜•ì´ê°€ ì§‘ì¤‘í•´ì„œ ë´ì•¼í•  ë“¯ í•©ë‹ˆë‹¤.
 
- * block : zumpy ÁÖÀÎ°øÀÌ ¶Ù¾î´Ù´Ï´Â ºí·°
- * item : zumpy ÁÖÀÎ°øÀÌ ¾ÆÀÌÅÛÀ» ¸Ô´Â °´Ã¼
- * player : ÁÖÀÎ°ø
+ * block : zumpy ì£¼ì¸ê³µì´ ë›°ì–´ë‹¤ë‹ˆëŠ” ë¸”ëŸ­
+ * item : zumpy ì£¼ì¸ê³µì´ ì•„ì´í…œì„ ë¨¹ëŠ” ê°ì²´
+ * player : ì£¼ì¸ê³µ
 
-item.js¿¡ check functionÀ» º¸½Ã¸é ÀÚ½ÅÀÇ ¾ÆÀÌÅÛÀÌ ¹«¾ùÀÌ³Ä(heart, coin µî)¿¡ µû¶ó ´Ù¸¥ µ¿ÀÛµéÀ» ÇÏ´Â °ÍÀ» º¸½Ç ¼ö ÀÖ½À´Ï´Ù.
+item.jsì— check functionì„ ë³´ì‹œë©´ ìžì‹ ì˜ ì•„ì´í…œì´ ë¬´ì—‡ì´ëƒ(heart, coin ë“±)ì— ë”°ë¼ ë‹¤ë¥¸ ë™ìž‘ë“¤ì„ í•˜ëŠ” ê²ƒì„ ë³´ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 ### item.js
 ```javascript
  check: function (other) {
@@ -38,55 +39,32 @@ item.js¿¡ check functionÀ» º¸½Ã¸é ÀÚ½ÅÀÇ ¾ÆÀÌÅÛÀÌ ¹«¾ùÀÌ³Ä(heart, coin µî)¿¡ µû¶
 ```
 
 
-levels Æú´õ
+levels í´ë”
 --------------------
 
-levels Æú´õ ¾È¿¡ levelÀº »ç½Ç ºó ²®¶§±âÀÏ »ÓÀÔ´Ï´Ù. ½ÇÁ¦·Î ¸ðµç ¿ªÇÒÀ» ÇÏ´Â ³ðÀº 
-manager ¾È¿¡ blockManagerÀÔ´Ï´Ù. À±Èñ¶û ¹Î¿¹´Â ¿©±â¸¦ ºÁ¾ßÇÒ °Í °°Àºµ¥ ±×¶§µµ ¸»ÇßµíÀÌ zumpy¿¡¼­´Â ºí·°À» ¾Õ¿¡¼­ µÚ·Î º¸³ÂÀ½.
+levels í´ë” ì•ˆì— levelì€ ì‚¬ì‹¤ ë¹ˆ ê»ë•Œê¸°ì¼ ë¿ìž…ë‹ˆë‹¤. ì‹¤ì œë¡œ ëª¨ë“  ì—­í• ì„ í•˜ëŠ” ê²ƒì€ 
+manager ì•ˆì— blockManagerìž…ë‹ˆë‹¤.
 
 
-manager Æú´õ
+manager í´ë”
 --------------------
 
- * blockManager : ºí·°µéÀ» ÀÏÁ¤ ½Ã°£¿¡ ÀÏÁ¤ °£°ÝÀ¸·Î »ý¼ºÇÏ¿©¼­ È­¸éÀ¸·Î ³»º¸ÀÌ°Ô ÇÏ´Â Manager
- * gameManager : °ÔÀÓÀÇ ÀüÃ¼ÀûÀÎ Èå¸§À» °üÀåÇÏ´Â ³ð
- * itemManager : itemµéÀ» ¿¹»Ú°í ¾Ë¸Â°Ô »Ñ·ÁÁÖ´Â ³ð
- * touchManager : »ç¿ëÀÚ ÀÔ·ÂÀ» Ã³¸®ÇÏ´Â ³ð
+ * blockManager : ë¸”ëŸ­ë“¤ì„ ì¼ì • ì‹œê°„ì— ì¼ì • ê°„ê²©ìœ¼ë¡œ ìƒì„±í•˜ì—¬ì„œ í™”ë©´ìœ¼ë¡œ ë‚´ë³´ì´ê²Œ í•˜ëŠ” Manager
+ * gameManager : ê²Œìž„ì˜ ì „ì²´ì ì¸ íë¦„ì„ ê´€ìž¥í•˜ëŠ” manager
+ * itemManager : itemë“¤ì„ ì˜ˆì˜ê³  ì•Œë§žê²Œ ë¿Œë ¤ì£¼ëŠ” manager
+ * touchManager : ì‚¬ìš©ìž ìž…ë ¥ì„ ì²˜ë¦¬í•˜ëŠ” manager
 
-¹Ø¿¡ ÄÚµå¸¦ º¸½Ã¸é ´ëºÎºÐÀÇ Manager Class µéÀº ´ÙÀ½°ú °°Àº ÇÔ¼ö°¡ ÀÖ´Â °ÍÀ» º¼ ¼ö ÀÖÀ» °ÍÀÔ´Ï´Ù.
-ÀÌ°Å´Â ImpactJS¿¡¼­ ÀÚÃ¼ÀûÀ¸·Î ¸¸µç Singleton °´Ã¼ »ý¼º ¹æ¹ýÀÔ´Ï´Ù.
-±×³É ÀÌ·¸°Ô ÄÚµùÇÏ¸é var myManager = new MyManager(); ¸¦ ÇÏ¿©µµ ´Ü ÇÏ³ªÀÇ °´Ã¼¸¸À» »ç¿ëÇÑ´Ù°í »ý°¢ÇÏ½Ã¸é µË´Ï´Ù.
-È¤½Ã SingletonÀÌ ¹ºÁö ¸ð¸£½Ã´Â ºÐÀº,
- * [Singleton](http://itdp1024.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4-Singleton-Pattern)
- ¿©±â³ª ÀÎÅÍ³Ý¿¡¼­ '½Ì±ÛÅæ'ÀÌ¶ó°í Ä¡¸é ¸¹ÀÌ ³ª¿È. ÀÌ¹ø ±âÈ¸¿¡ ÇÑ¹ø ¾Ë¾Æº¸¼À.
-
-```javascript
-staticInstantiate: function () {
-    if (BlockManager.instance == null) {
-	return null;
-    }
-    else {
-	return BlockManager.instance;
-    }
-},
-
-init: function () {
-
-    BlockManager.instance = this;
-
-},
-```
 
 
 ### touchManager
 
-¿©±â touchManager¿¡ º¸½Ã¸é update ´Ü¿¡¼­ ÀÌÁß Á¡ÇÁ¸¦ ÇÏ´Â ÄÚµå°¡ ÀÖ½À´Ï´Ù.
-zumpy °°Àº °æ¿ì ¾ÆÀÌÅÛÀ» ¸ÔÀ¸¸é ÀÌÁß Á¡ÇÁ »Ó¸¸ ¾Æ´Ï¶ó ´õ ÇÒ¼ö ÀÖ½À´Ï´Ù.
-±×·¡¼­ º¸½Ã¸é GM.JUMP > 0 ÀÇ º¯¼ö°¡ 0º¸´Ù Å©¸éÀº °è¼ÓÇØ¼­ °øÁß Á¡ÇÁ¸¦ ÇÒ ¼ö ÀÖ°Ô Çß½À´Ï´Ù.
-±×¸®°í Á¡ÇÁ¸¦ ÇØÁÖ´Â ÄÚµå´Â Á¤¸» °£´ÜÇÕ´Ï´Ù.
-`this.player.vel.y = -700;` ¿ä·¸°Ô¸¸ ÇØÁÖ¸é ³¡~!
-±Ùµ¥ º¸¸é this.player ¶ó°í µÇ¾î ÀÖ´Âµ¥ Ã³À½¿¡ °ÔÀÓÀ» ½ÃÀÛÇÒ ¶§ touchManager¿¡ ´©±º°¡°¡ player¸¦ ´ëÀÔÇØÁà¾ß ÇÕ´Ï´Ù.
-¾Æ´Ï¸é this.player¿¡ nullÀÌ µé¾î°¡¼­ ¿¡·¯°¡ ³ª°ÚÁö¿ä.
+ì—¬ê¸° touchManagerì— ë³´ì‹œë©´ update ë‹¨ì—ì„œ ì´ì¤‘ ì í”„ë¥¼ í•˜ëŠ” ì½”ë“œê°€ ìžˆìŠµë‹ˆë‹¤.
+zumpy ê°™ì€ ê²½ìš° ì•„ì´í…œì„ ë¨¹ìœ¼ë©´ ì´ì¤‘ ì í”„ ë¿ë§Œ ì•„ë‹ˆë¼ ë” í• ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+ê·¸ëž˜ì„œ ë³´ì‹œë©´ GM.JUMP > 0 ì˜ ë³€ìˆ˜ê°€ 0ë³´ë‹¤ í¬ë©´ì€ ê³„ì†í•´ì„œ ê³µì¤‘ ì í”„ë¥¼ í•  ìˆ˜ ìžˆê²Œ í–ˆìŠµë‹ˆë‹¤.
+ê·¸ë¦¬ê³  ì í”„ë¥¼ í•´ì£¼ëŠ” ì½”ë“œëŠ” ì •ë§ ê°„ë‹¨í•©ë‹ˆë‹¤.
+`this.player.vel.y = -700;` ìš”ë ‡ê²Œë§Œ í•´ì£¼ë©´ ë~!
+ê·¼ë° ë³´ë©´ this.player ë¼ê³  ë˜ì–´ ìžˆëŠ”ë° ì²˜ìŒì— ê²Œìž„ì„ ì‹œìž‘í•  ë•Œ touchManagerì— ëˆ„êµ°ê°€ê°€ playerë¥¼ ëŒ€ìž…í•´ì¤˜ì•¼ í•©ë‹ˆë‹¤.
+ì•„ë‹ˆë©´ this.playerì— nullì´ ë“¤ì–´ê°€ì„œ ì—ëŸ¬ê°€ ë‚˜ê² ì§€ìš”.
 
 ```javascript
 update: function () {
@@ -110,7 +88,7 @@ update: function () {
 main.js
 --------------------
 
-¸¶Áö¸·À¸·Î main.js¿¡ º¸½Ã¸é »ç¿ëÀÚ Å° ¹ÙÀÎµù ÀÛ¾÷°ú ´ÙÀ½°ú °°Àº ÄÚµå¸¦ º¼ ¼ö ÀÖ´Âµ¥,
+ë§ˆì§€ë§‰ìœ¼ë¡œ main.jsì— ë³´ì‹œë©´ ì‚¬ìš©ìž í‚¤ ë°”ì¸ë”© ìž‘ì—…ê³¼ ë‹¤ìŒê³¼ ê°™ì€ ì½”ë“œë¥¼ ë³¼ ìˆ˜ ìžˆëŠ”ë°,
 
 ```javascript
 GM = new GameManager();
@@ -119,6 +97,6 @@ TM = new TouchManager();
 BM = new BlockManager();
 ```
 
-ÀÌ·¸°Ô ÇÏ¸é Impact ¾î´À °÷¿¡¼­µçÁö GM.gameStart(); ÀÌ·¸°Ô ¾Æ¹«´ë³ª¿¡¼­ È£ÃâÇÒ¼ö ÀÖ½À´Ï´Ù.
-(GlobalÇÏ°Ô »ç¿ëÇÏ°Ô À§ÇÔ)
+ì´ë ‡ê²Œ í•˜ë©´ Impact ì–´ëŠ ê³³ì—ì„œë“ ì§€ GM.gameStart(); ì´ë ‡ê²Œ ì•„ë¬´ëŒ€ë‚˜ì—ì„œ í˜¸ì¶œí• ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+(Globalí•˜ê²Œ ì‚¬ìš©í•˜ê²Œ ìœ„í•¨)
 
